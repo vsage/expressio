@@ -1,0 +1,7 @@
+{
+  "name": "expressio",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
