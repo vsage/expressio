@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Equipes</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+    <ion-item *ngFor="let input of inputsList; let i = index; trackBy:trackByIndex;" [attr.data-index]="i" >
+        <ion-label color="primary" stacked>Stacked Label</ion-label>
+        <ion-input [(ngModel)]="inputsList[i]" placeholder="équipe {{i+1}}"></ion-input>
+    </ion-item>
+
+    <button ion-button color="secondary" (click)="createTeam()">Ajouter</button>
+    <button ion-button color="danger" (click)="removeTeam()">Enlever</button><br>
+
+    <ion-footer no-shadow>
+        <ion-toolbar position="bottom">
+          <button ion-button color="secondary" block  (click)="goToThemes()">OK</button><br>
+        </ion-toolbar>
+      </ion-footer>
+  </ion-content>

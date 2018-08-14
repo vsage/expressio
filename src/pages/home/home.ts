@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TeamsCreatePage } from '../teams-create/teams-create';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  teamsCreatePage: any;
 
+  constructor(public navCtrl: NavController) {
+    this.teamsCreatePage = TeamsCreatePage;
   }
 
+  // startFreeGame(){
+  //   this.navCtrl.push(ThemesPage);
+  // }
 }

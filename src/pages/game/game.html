@@ -1,0 +1,14 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{theme}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>I'm the other page!
+    <div class="countdown">{{time/1000 | number:'1.1-1'}}</div>
+
+    <div class="expression">{{currentExpression?.expression}}</div>
+    <button ion-button color="secondary" (click)="next()">NEXT</button>
+
+    <div *ngFor="let score of score">{{score}}</div>
+  </ion-content>
