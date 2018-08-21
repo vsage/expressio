@@ -1,7 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ThemesPage } from '../themes/themes';
-import { NameTeamPage } from '../name-team/name-team';
 
 @Component({
   selector: 'teams-create',

@@ -13,8 +13,6 @@ export class ThemesPage implements OnInit{
   }
 
   ngOnInit(){
-    console.log(this.navParams)
-
   }
 
   startGame(theme) {

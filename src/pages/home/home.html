@@ -11,7 +11,7 @@
   Choisissez votre mode de jeu
   <!-- <p>
   </p> -->
-  <button ion-button color="secondary" block >Jeu Libre</button><br>
+  <button ion-button color="secondary" block [navPush]="themesPage" [navParams]="{'type':'free'}">Jeu Libre</button><br>
   <button ion-button block [navPush]="teamsCreatePage" [navParams]="{'type':'team'}">Jeu en équipes</button><br>
   <button ion-button color="light" block>Paramètres</button>
 </ion-content>
