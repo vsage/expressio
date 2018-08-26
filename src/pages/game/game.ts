@@ -2,18 +2,20 @@ import { Component,OnInit } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { NextPlayerPage } from '../next-player/next-player';
 import { GameEndedPage } from '../game-ended/game-ended';
+import { IExpression, GameService } from './game-service'
 
 @Component({
   selector: 'game',
-  templateUrl: 'game.html'
+  templateUrl: 'game.html',
+  providers:[GameService]
 })
 export class GamePage implements OnInit{
 
   public time: number;
   public interval: any;
   public theme: string;
-  public expressions: any[];
-  public currentExpression: string;
+  public expressions: IExpression[];
+  public currentExpression: IExpression;
   public questionIndex: number;
   public teamIndex: number;
   public currentTeam: string;
@@ -25,10 +27,11 @@ export class GamePage implements OnInit{
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public gameService: GameService) {
     this.type = this.navParams.get('type');
     this.theme = this.navParams.get('theme');
-    if (this.type=='team') {
+    if (this.type=='team') {
       this.teams = this.navParams.get('teams');
       this.score = new Array(this.teams.length).fill(0);
     }
@@ -37,16 +40,19 @@ export class GamePage implements OnInit{
 
   ngOnInit(){
 
-    this.expressions = [
-      {expression: 'avoir du plomb dans l’aile'},
-      {expression: 'avoir un fil à la patte'},
-      {expression: 'avoir un sacré coup de patte'},
-      {expression: 'donner des ailes'},
-      {expression: 'faire patte de velours'},
-      {expression: 'graisser la patte'},
-      {expression: 'montrer patte blanche'},
-    ]
-    this.startGame(this.type);
+    // this.expressions = [
+    //   {expression: 'avoir du plomb dans l’aile'},
+    //   {expression: 'avoir un fil à la patte'},
+    //   {expression: 'avoir un sacré coup de patte'},
+    //   {expression: 'donner des ailes'},
+    //   {expression: 'faire patte de velours'},
+    //   {expression: 'graisser la patte'},
+    //   {expression: 'montrer patte blanche'},
+    // ]
+    this.gameService.listExpressions().subscribe((exps) => {
+        this.expressions = exps.body;
+        this.startGame(this.type);
+    })
   }
 
   startGame(type) {
@@ -106,7 +112,7 @@ export class GamePage implements OnInit{
   }
 
   nextPlayer(){
-    if (this.rounds > 0) {
+    if (this.rounds > 0) {
       let nextPlayerModal = this.modalCtrl.create(NextPlayerPage, {team: this.currentTeam});
       nextPlayerModal.onDidDismiss(data => {
         this.newTurn(this.type);
@@ -122,3 +128,4 @@ export class GamePage implements OnInit{
 
   }
 }
+

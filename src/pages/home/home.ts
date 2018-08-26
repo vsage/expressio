@@ -17,7 +17,6 @@ export class HomePage {
     this.teamsCreatePage = TeamsCreatePage;
     this.themesPage = ThemesPage;
 
-    // i9BuHwE9EmJpWgmh
   }
 
 }
