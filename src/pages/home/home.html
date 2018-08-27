@@ -1,19 +1,57 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       Expressio
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content padding>
-  <ion-icon name="star"></ion-icon><br>
-  Choisissez votre mode de jeu
+  <ion-grid>
+      <ion-row>
+        <p class="welcome-title">EXPRESSIO</p>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col col-10 offset-1>
+            <button block ion-button large 
+            color="secondary"
+            [navPush]="themesPage"
+            [navParams]="{'type':'free'}"
+            class="welcome-button">Jeu Libre</button><br>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-10 offset-1>
+              <button block ion-button large
+              color="secondary"
+              [navPush]="teamsCreatePage"
+              [navParams]="{'type':'team'}"
+              class="welcome-button">Jeu en équipes</button><br>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 class="col-flex-center">
+          <button block ion-button
+          color="dark-green"
+          class="parameter-button">?</button>
+      </ion-col>
+      <ion-col col-4 class="col-flex-center">
+          <button block ion-button 
+          color="dark-green"
+          class="parameter-button">?</button>
+      </ion-col>
+      <ion-col col-4 class="col-flex-center">
+          <button block ion-button 
+          color="dark-green"
+          class="parameter-button">?</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <!-- <p>
   </p> -->
-  <button ion-button color="secondary" block [navPush]="themesPage" [navParams]="{'type':'free'}">Jeu Libre</button><br>
-  <button ion-button block [navPush]="teamsCreatePage" [navParams]="{'type':'team'}">Jeu en équipes</button><br>
-  <button ion-button color="light" block>Paramètres</button>
 </ion-content>
 
 

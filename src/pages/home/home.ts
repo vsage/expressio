@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { TeamsCreatePage } from '../teams-create/teams-create';
-import { ThemesPage } from '../themes/themes';
+import { Component } from "@angular/core";
+import { NavController } from "ionic-angular";
+import { TeamsCreatePage } from "../teams-create/teams-create";
+import { ThemesPage } from "../themes/themes";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html",
 })
 export class HomePage {
 
-  teamsCreatePage: any;
-  themesPage: any;
+  public teamsCreatePage: any;
+  public themesPage: any;
 
   constructor(
     public navCtrl: NavController) {

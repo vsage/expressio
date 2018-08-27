@@ -34,9 +34,10 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #48caa3,
+  secondary:  #f3ef17,
+  dark-green: #209e83,
+  white:      #ffffff,
   light:      #f4f4f4,
   dark:       #222
 );
@@ -46,13 +47,14 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$button-ios-border-radius: 16px;
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$button-md-border-radius: 16px;
 
 
 
@@ -70,6 +72,7 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
+$background-color: color($colors, primary);
 @import "ionic.theme.default";
 
 
@@ -86,3 +89,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
