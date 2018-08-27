@@ -1,13 +1,9 @@
-<ion-header>
-    <ion-navbar>
-      <ion-title>{{theme}}</ion-title>
-    </ion-navbar>
-  </ion-header>
+<ion-content padding>
+  <button class="button-back" ion-button  clear (click)="back()">retour</button><br>
+  <br>
+  <div class="countdown">{{time/1000 | number:'1.1-1'}}</div>
 
-  <ion-content padding>I'm the other page!
-    <div class="countdown">{{time/1000 | number:'1.1-1'}}</div>
+  <div class="expression">{{currentExpression?.expression}}</div>
+  <button class="button-fun" block ion-button color="secondary" (click)="next()">NEXT</button>
 
-    <div class="expression">{{currentExpression?.expression}}</div>
-    <button ion-button color="secondary" (click)="next()">NEXT</button>
-
-  </ion-content>
+</ion-content>

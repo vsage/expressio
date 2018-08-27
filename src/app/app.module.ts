@@ -12,7 +12,8 @@ import { GamePage } from "../pages/game/game";
 import { HomePage } from "../pages/home/home";
 import { NextPlayerPage } from "../pages/next-player/next-player";
 import { TeamsCreatePage } from "../pages/teams-create/teams-create";
-import { ThemesPage } from "../pages/themes/themes";
+import { ThemePage } from "../pages/theme/theme";
+
 import { MyApp } from "./app.component";
 
 @NgModule({
@@ -21,7 +22,7 @@ import { MyApp } from "./app.component";
     HomePage,
     GamePage,
     NextPlayerPage,
-    ThemesPage,
+    ThemePage,
     TeamsCreatePage,
     GameEndedPage,
   ],
@@ -36,7 +37,7 @@ import { MyApp } from "./app.component";
     HomePage,
     GamePage,
     NextPlayerPage,
-    ThemesPage,
+    ThemePage,
     TeamsCreatePage,
     GameEndedPage,
   ],
