@@ -1,0 +1,30 @@
+teams-create {
+    .welcome-button {
+        // font-weight: 700;
+        color: color($colors, dark-green);
+        text-transform: uppercase;
+        font-family: 'passiononebold';
+        font-size: 28px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        &.activated {
+            box-shadow: 0 0px 0px white;
+        }
+    }
+    // ion-input.text-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    //     color: red;
+    // }
+    input.text-input{
+        font-family: 'passiononebold';
+        font-size: 5vh;
+        line-height: 6vh;
+        color: color($colors, white);
+        &::placeholder {
+            // color: color($colors, white);
+        }
+        // color: red;
+    }
+
+    .item-inner {
+        border-bottom: 1px solid color($colors, light) !important;
+    }
+}

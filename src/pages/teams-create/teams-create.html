@@ -1,21 +1,38 @@
-<ion-header>
-    <ion-navbar>
-      <ion-title>Equipes</ion-title>
-    </ion-navbar>
-  </ion-header>
+<ion-content padding>
+    <button class="button-back" ion-button  clear (click)="back()">retour</button><br>
+  <ion-item *ngFor="let input of inputsList; let i = index; trackBy:trackByIndex;" [attr.data-index]="i" >
+      <!-- <ion-label color="white" stacked>Stacked Label</ion-label> -->
+      <ion-input color="white" [(ngModel)]="inputsList[i]" placeholder="&Eacute;quipe {{i+1}}"></ion-input>
+  </ion-item>
 
-  <ion-content padding>
-    <ion-item *ngFor="let input of inputsList; let i = index; trackBy:trackByIndex;" [attr.data-index]="i" >
-        <ion-label color="primary" stacked>Stacked Label</ion-label>
-        <ion-input [(ngModel)]="inputsList[i]" placeholder="équipe {{i+1}}"></ion-input>
-    </ion-item>
+  <!-- <button ion-button color="secondary" (click)="createTeam()">Ajouter</button>
+  <button ion-button color="danger" (click)="removeTeam()">Enlever</button><br> -->
 
-    <button ion-button color="secondary" (click)="createTeam()">Ajouter</button>
-    <button ion-button color="danger" (click)="removeTeam()">Enlever</button><br>
-
-    <ion-footer no-shadow>
-        <ion-toolbar position="bottom">
-          <button ion-button color="secondary" block  (click)="goToThemes()">OK</button><br>
-        </ion-toolbar>
-      </ion-footer>
-  </ion-content>
+  <ion-footer>
+    <ion-row>
+      <ion-col col-4 offset-1>
+          <button [disabled]="this.inputsList.length > 4" 
+            block ion-button color="secondary"
+          (click)="createTeam()" class="welcome-button">+</button>
+      </ion-col>
+      <ion-col col-4 offset-2>
+          <button [disabled]="this.inputsList.length < 2" 
+          block ion-button color="secondary"
+          (click)="removeTeam()" class="welcome-button">-</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-10 offset-1>
+            <button block ion-button large 
+            color="secondary"
+            (click)="goToThemes()"
+            class="welcome-button">OK</button><br>
+        </ion-col>
+    </ion-row>
+  </ion-footer>
+  <!-- <ion-footer no-shadow>
+      <ion-toolbar position="bottom">
+        <button ion-button color="secondary" block  (click)="goToThemes()">OK</button><br>
+      </ion-toolbar>
+    </ion-footer> -->
+</ion-content>

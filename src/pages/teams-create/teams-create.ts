@@ -9,6 +9,7 @@ import { ThemePage } from "../theme/theme";
 export class TeamsCreatePage implements OnInit {
 
   public inputsList: any[];
+  public currentIndex = 1;
 
   constructor(
     public navCtrl: NavController,
@@ -19,20 +20,21 @@ export class TeamsCreatePage implements OnInit {
   }
 
   public ngOnInit() {
-    this.inputsList = ["", ""];
+    this.inputsList = ["équipe 1", "équipe 2"];
+  }
+
+  public back() {
+    this.navCtrl.pop();
   }
 
   public createTeam() {
-    this.inputsList.push("");
-    // let nameTeam = this.modalCtrl.create(NameTeamPage);
-    // nameTeam.onDidDismiss(data => {
-    //   console.log(data);
-    // });
-    // nameTeam.present();
+    this.currentIndex += 1;
+    this.inputsList.push("équipe " + (this.currentIndex + 1));
   }
 
   public removeTeam() {
-    if (this.inputsList.length > 2) {
+    if (this.inputsList.length > 1) {
+      this.currentIndex -= 1;
       this.inputsList.pop();
     }
   }

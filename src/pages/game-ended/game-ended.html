@@ -1,15 +1,16 @@
-<ion-header>
-    <ion-navbar>
-      <ion-title></ion-title>
-      <!-- <ion-icon name="star"></ion-icon> -->
-    </ion-navbar>
-  </ion-header>
+<ion-content padding>
+  <div *ngFor="let score of displayedScores;
+  let i = index; 
+  trackBy:trackByIndex;" 
+  [attr.data-index]="i"
+  [className]="i==0 ? 'win' : 'lose'"
+  >
+      <div>#{{i+1}}</div>
+      <p color="primary" 
+      >{{score.team}}
+      </p>
+      <div color="primary">{{score.score}}</div>
+  </div>
 
-  <ion-content padding>
-    <ion-item *ngFor="let score of displayedScores; let i = index; trackBy:trackByIndex;" [attr.data-index]="i" >
-        <span>#{{i+1}}</span><ion-label color="primary" stacked [className]="i==0 ? 'winner' : 'loser'">{{score.team}}</ion-label>
-        <ion-label color="primary" stacked>{{score.score}}</ion-label>
-    </ion-item>
-
-    <button ion-button block (click)="dismiss()">Home</button>
-  </ion-content>
+  <button clear class="end-button" ion-button block (click)="dismiss()">Home</button>
+</ion-content>

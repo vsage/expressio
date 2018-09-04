@@ -76,7 +76,7 @@ export class GamePage implements OnInit {
 
   public newTurn(type) {
     if (type === "team") {
-      this.time = 10000;
+      this.time = 1000;
       this.interval = setInterval(() => this.decrement(), 100);
     }
     this.questionIndex = 0;

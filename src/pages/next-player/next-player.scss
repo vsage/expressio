@@ -1,0 +1,16 @@
+next-player-page {
+    .next-text {
+        font-family:  'passiononebold';
+        color: color($colors, secondary);;
+        font-size:  10vh;
+        text-align:  center;
+    }
+
+    .button-next {
+        // font-weight: 700;
+        color: color($colors, dark-green);
+        text-transform: uppercase;
+        font-family: 'passiononebold';
+        font-size: 10vh;
+    }
+}

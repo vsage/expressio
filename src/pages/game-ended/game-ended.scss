@@ -1,7 +1,40 @@
-.winner {
-    font-size: 2em;
-    color: blue;
-}
-.loser {
-    
+game-ended-page {
+    .win {
+        display: flex;
+        justify-content: space-between;
+        div {
+            font-size: 8vh;
+            font-family: "passiononebold";
+            color: color($colors, secondary);
+        }
+        p {
+            font-size: 8vh;
+            font-family: "passiononebold";
+            color: color($colors, secondary);
+            margin: 0;
+        }
+    }
+
+    .lose {
+        display: flex;
+        justify-content: space-between;
+        div {
+            font-size: 8vh;
+            font-family: "passiononebold";
+            color: color($colors, dark-green);
+        }
+        p {
+            font-size: 8vh;
+            font-family: "passiononebold";
+            color: color($colors, dark-green);
+            margin: 0;
+        }
+    }
+
+    .end-button {
+        color: color($colors, dark-green);
+        text-transform: uppercase;
+        font-family: 'passiononebold';
+        font-size: 10vh;
+    }
 }

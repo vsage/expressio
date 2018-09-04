@@ -36,7 +36,7 @@ $app-direction: ltr;
 $colors: (
   primary:    #48caa3,
   secondary:  #f3ef17,
-  dark-green: #209e83,
+  dark-green: #187561,
   white:      #ffffff,
   light:      #f4f4f4,
   dark:       #222
@@ -73,6 +73,8 @@ $button-md-border-radius: 16px;
 // default are overridden.
 
 $background-color: color($colors, primary);
+$text-input-placeholder-color: color($colors, light);
+
 @import "ionic.theme.default";
 
 
