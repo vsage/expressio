@@ -74,6 +74,7 @@ export class GamePage implements OnInit {
   }
 
   public startGame(type) {
+    this.questionIndex = 0;
     switch (type) {
       case "free":
         this.newTurn(type);
@@ -92,7 +93,6 @@ export class GamePage implements OnInit {
       this.time = 45000;
       this.interval = setInterval(() => this.decrement(), 100);
     }
-    this.questionIndex = 0;
     this.currentExpression = this.expressions[this.questionIndex];
   }
 
@@ -129,6 +129,7 @@ export class GamePage implements OnInit {
   }
 
   public nextPlayer() {
+    this.questionIndex += 1;
     if (this.rounds > 0) {
       const nextPlayerModal = this.modalCtrl.create(NextPlayerPage, {team: this.currentTeam});
       nextPlayerModal.onDidDismiss((data) => {
