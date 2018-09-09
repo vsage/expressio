@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController, NavController } from "ionic-angular";
+import { GamePage } from "../game/game";
 import { GameService } from "../game/game-service";
 import { RulesPage } from "../rules/rules";
 import { SettingsPage } from "../settings/settings";
@@ -15,6 +16,7 @@ export class HomePage implements OnInit {
 
   public teamsCreatePage: any;
   public themePage: any;
+  public gamePage: any;
 
   constructor(
     public navCtrl: NavController,
@@ -22,6 +24,7 @@ export class HomePage implements OnInit {
     public gameService: GameService) {
     this.teamsCreatePage = TeamsCreatePage;
     this.themePage = ThemePage;
+    this.gamePage = GamePage;
 
   }
 
@@ -31,17 +34,13 @@ export class HomePage implements OnInit {
 
   public goToSettings() {
     const SettingsModal = this.modalCtrl.create(SettingsPage);
-    SettingsModal.onDidDismiss((data) => {
-        console.log(data);
-      });
+    SettingsModal.onDidDismiss((data) => { "done"; });
     SettingsModal.present();
   }
 
   public goToRules() {
     const RulesModal = this.modalCtrl.create(RulesPage);
-    RulesModal.onDidDismiss((data) => {
-      console.log(data);
-    });
+    RulesModal.onDidDismiss((data) => { "done"; });
     RulesModal.present();
   }
 

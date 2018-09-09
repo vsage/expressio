@@ -9,7 +9,7 @@ export interface IExpression {
 
 @Injectable()
 export class GameService {
-  public configUrl = isDevMode() ? "http://localhost:8000" : "https://expressio.herokuapp.com";
+  public configUrl = isDevMode() ? "https://expressio.herokuapp.com" : "https://expressio.herokuapp.com";
   constructor(private http: HttpClient) { }
 
   public listExpressions(): Observable<HttpResponse<IExpression[]>> {
@@ -23,6 +23,6 @@ export class GameService {
   }
 
   public launchServer() {
-    this.http.get(this.configUrl + "/expressions/wakeup").subscribe((d) => {});
+    this.http.get(this.configUrl + "/expressions/wakeup").subscribe((d) => { "started"; });
   }
 }

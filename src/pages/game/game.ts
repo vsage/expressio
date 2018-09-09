@@ -61,13 +61,11 @@ export class GamePage implements OnInit {
     // ]
     if (this.theme === "random") {
       this.gameService.listExpressions().subscribe((exps) => {
-        console.log(exps);
         this.expressions = this.shuffle(exps.body);
         this.startGame(this.type);
       });
     } else {
       this.gameService.listExpressionsCategory(this.theme).subscribe((exps) => {
-        console.log(exps);
         this.expressions = this.shuffle(exps.body);
         this.startGame(this.type);
       });
@@ -86,13 +84,12 @@ export class GamePage implements OnInit {
         this.nextPlayer();
         break;
       default:
-        console.log("can't find this type");
     }
   }
 
   public newTurn(type) {
     if (type === "team") {
-      this.time = 5000;
+      this.time = 45000;
       this.interval = setInterval(() => this.decrement(), 100);
     }
     this.questionIndex = 0;

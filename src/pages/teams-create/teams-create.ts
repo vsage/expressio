@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController, NavController, NavParams } from "ionic-angular";
+import { GamePage } from "../game/game";
 import { ThemePage } from "../theme/theme";
 
 @Component({
@@ -46,6 +47,14 @@ export class TeamsCreatePage implements OnInit {
   public goToThemes() {
     this.navCtrl.push(ThemePage, {
       teams: this.inputsList,
+      type: this.navParams.get("type"),
+    });
+  }
+
+  public goToGame() {
+    this.navCtrl.push(GamePage, {
+      teams: this.inputsList,
+      theme: "random",
       type: this.navParams.get("type"),
     });
   }
