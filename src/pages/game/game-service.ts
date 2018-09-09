@@ -9,12 +9,20 @@ export interface IExpression {
 
 @Injectable()
 export class GameService {
-  public configUrl = "http://localhost:8000";
+  public configUrl = isDevMode() ? "http://localhost:8000" : "https://expressio.herokuapp.com";
   constructor(private http: HttpClient) { }
 
   public listExpressions(): Observable<HttpResponse<IExpression[]>> {
-      console.log(isDevMode());
       return this.http.get<IExpression[]>(
       this.configUrl + "/expressions", { observe: "response" });
+  }
+
+  public listExpressionsCategory(category): Observable<HttpResponse<IExpression[]>> {
+    return this.http.get<IExpression[]>(
+    this.configUrl + "/expressions/list/" + category, { observe: "response" });
+  }
+
+  public launchServer() {
+    this.http.get(this.configUrl + "/expressions/wakeup").subscribe((d) => {});
   }
 }

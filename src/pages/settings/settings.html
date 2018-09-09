@@ -1,0 +1,36 @@
+<ion-content>
+      <!-- <p>Equipe suivante :</p> -->
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <ion-row>
+              <p class="settings-txt">
+                  Nombre de tours par équipe : {{settings.turns || 4}}
+              </p>
+            </ion-row>
+            <ion-row justify-content-center>
+              <ion-col col-3>
+                <button ion-button class="add-or-remove-btn" round color="secondary" (click)="addTurn()">+</button>
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button class="add-or-remove-btn" round color="secondary"  (click)="removeTurn()">-</button>
+              </ion-col>
+
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-footer>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8 offset-2>
+              <button ion-button block
+              color="secondary"
+              class="button-fun button-save" 
+              (click)="dismiss()" 
+              >SAUVEGARDER</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+</ion-content>

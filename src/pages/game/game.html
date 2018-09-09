@@ -1,7 +1,7 @@
 <ion-content padding>
   <button class="button-back" ion-button  clear (click)="back()">retour</button>
   <div class="countdown">{{time/1000 | number:'1.1-1'}}</div>
-  <div class="expression">{{currentExpression?.expression}}</div>
+  <div class="expression">{{currentExpression?.expression | capitalize}}</div>
 
   <ion-footer>
     <ion-row>

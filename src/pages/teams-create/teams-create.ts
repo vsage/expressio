@@ -45,8 +45,8 @@ export class TeamsCreatePage implements OnInit {
 
   public goToThemes() {
     this.navCtrl.push(ThemePage, {
-      type: this.navParams.get("type"),
       teams: this.inputsList,
+      type: this.navParams.get("type"),
     });
   }
 

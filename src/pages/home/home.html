@@ -23,23 +23,32 @@
           </ion-col>
       </ion-row>
   </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-4 class="col-flex-center">
-          <button block ion-button
-          color="dark-green"
-          class="parameter-button">?</button>
-      </ion-col>
-      <ion-col col-4 class="col-flex-center">
-          <button block ion-button 
-          color="dark-green"
-          class="parameter-button">?</button>
-      </ion-col>
-      <ion-col col-4 class="col-flex-center">
-          <button block ion-button 
-          color="dark-green"
-          class="parameter-button">?</button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-footer>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4 class="col-flex-center">
+   
+              <button block ion-button
+              icon-only
+              color="dark-green"
+              class="parameter-button"
+              (click)="goToRules()">
+              <ion-icon name="help"></ion-icon></button>
+          </ion-col>
+          <ion-col col-4 class="col-flex-center">
+              <button block ion-button 
+              color="dark-green"
+              class="parameter-button"
+              (click)="goToSettings()">
+              <ion-icon name="settings"></ion-icon></button>
+          </ion-col>
+          <ion-col col-4 class="col-flex-center">
+              <button block ion-button 
+              color="dark-green"
+              class="parameter-button" disabled>
+              <ion-icon name="add"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-footer>
 </ion-content>

@@ -27,9 +27,10 @@ page-home {
     
     .parameter-button {
         font-family: 'passiononebold';
-        font-size: 16px;
+        font-size: 2em;
         width: 10vh;
         height: 10vh;
+        color: color($colors, primary);
     }
     
 }
