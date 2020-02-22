@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content no-bounce>
       <!-- <p>Equipe suivante :</p> -->
       <ion-grid>
         <ion-row>
@@ -10,12 +10,11 @@
             </ion-row>
             <ion-row justify-content-center>
               <ion-col col-3>
-                <button ion-button class="add-or-remove-btn" round color="secondary" (click)="addTurn()">+</button>
-              </ion-col>
-              <ion-col col-3>
                 <button ion-button class="add-or-remove-btn" round color="secondary"  (click)="removeTurn()">-</button>
               </ion-col>
-
+              <ion-col col-3>
+                <button ion-button class="add-or-remove-btn" round color="secondary" (click)="addTurn()">+</button>
+              </ion-col>
             </ion-row>
           </ion-col>
         </ion-row>
@@ -23,7 +22,7 @@
       <ion-footer>
         <ion-grid>
           <ion-row>
-            <ion-col col-8 offset-2>
+            <ion-col col-10 offset-1>
               <button ion-button block
               color="secondary"
               class="button-fun button-save" 

@@ -21,7 +21,6 @@ export class SettingsPage implements OnInit {
   public ngOnInit() {
     this.settingsList.forEach((setting) => {
       this.storage.get(setting).then((val) => {
-        console.log(val);
         if (!val) {
           this.initSetting(setting);
         } else {

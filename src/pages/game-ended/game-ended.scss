@@ -2,16 +2,19 @@ game-ended-page {
     .win {
         display: flex;
         justify-content: space-between;
+        margin-top: 8vh;
         div {
-            font-size: 8vh;
+            font-size: 12vw;
             font-family: "passiononebold";
             color: color($colors, secondary);
         }
         p {
-            font-size: 8vh;
+            font-size: 12vw;
             font-family: "passiononebold";
             color: color($colors, secondary);
             margin: 0;
+            flex-grow: 2;
+            padding-left: 4vw
         }
     }
 
@@ -19,15 +22,17 @@ game-ended-page {
         display: flex;
         justify-content: space-between;
         div {
-            font-size: 8vh;
+            font-size: 12vw;
             font-family: "passiononebold";
             color: color($colors, dark-green);
         }
         p {
-            font-size: 8vh;
+            font-size: 12vw;
             font-family: "passiononebold";
             color: color($colors, dark-green);
             margin: 0;
+            flex-grow: 2;
+            padding-left: 4vw
         }
     }
 

@@ -1,25 +1,35 @@
-.expression {
-    font-size: 8vh;
-    font-family: "passiononebold";
-    color: color($colors, dark-green);
-    position: absolute;
-    // height: 50vh;
-    width: 80vw;
-    top: 25vh;
-    left: 10vw;
-    // padding: 0.5em;
-    text-align: center;
-    // background-color: color($colors, dark-green);
-    // border-radius: 20px;
-    // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    // text-shadow: -1px 0 color($colors, dark-green), 0 1px color($colors, dark-green), 1px 0 color($colors, dark-green), 0 -1px color($colors, dark-green);
+game-page {
+    .game-container {
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: space-between;
+    }
+    .game-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .expression {
+        font-size: 8vh;
+        font-family: "passiononebold";
+        color: color($colors, dark-green);
+        width: 80vw;
+        text-align: center;
+    }
+    
+    .countdown {
+        text-align: center;
+        color: color($colors, secondary);
+        font-size: 10vh;
+        font-family: "passiononebold";
+    }
 
+    .passed-button {
+        color: color($colors, light);
+    }
 
-}
-
-.countdown {
-    text-align: center;
-    color: color($colors, secondary);
-    font-size: 10vh;
-    font-family: "passiononebold";
+    .hot {
+        color: tomato;
+    }
 }

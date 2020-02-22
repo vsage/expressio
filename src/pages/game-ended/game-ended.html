@@ -1,4 +1,4 @@
-<ion-content padding>
+<ion-content padding no-bounce>
   <div *ngFor="let score of displayedScores;
   let i = index; 
   trackBy:trackByIndex;" 
@@ -9,7 +9,7 @@
       <p color="primary" 
       >{{score.team}}
       </p>
-      <div color="primary">{{score.score}}</div>
+      <div color="primary">({{score.score}})</div>
   </div>
 <ion-footer>
 

@@ -1,4 +1,4 @@
-<ion-content padding>
+<ion-content padding no-bounce>
     <button class="button-back" ion-button  clear (click)="back()">retour</button><br>
   <ion-item *ngFor="let input of inputsList; let i = index; trackBy:trackByIndex;" [attr.data-index]="i" >
       <!-- <ion-label color="white" stacked>Stacked Label</ion-label> -->
